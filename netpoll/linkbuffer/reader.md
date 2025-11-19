@@ -10,7 +10,7 @@
 
 ### 2. 关键设计理念与数据结构
 
-![](../pic/linkbuffer_architecture.png)
+![](../../pic/linkbuffer_architecture.png)
 
 
 
