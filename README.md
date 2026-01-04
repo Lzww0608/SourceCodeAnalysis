@@ -26,12 +26,14 @@ CloudWeGo 作为字节跳动开源的高性能、可扩展的微服务框架，�
 这是一个动态更新的列表，用于跟踪各个模块的分析进度。
 
 * [ ] **Netpoll** (网络库)
-    
-    * [ ] 基础架构与事件模型
-    * [ ] Nopoll / Linkpoll 机制
-    * [ ] 传输层 (TCP/UDP) 封装
+  
+    * [x] **LinkBuffer** 
+    * [ ] **Poller** 
+    * [ ] **Connection** (如何将 Buffer 和 FD 结合)
+    * [ ] **EventLoop** (事件分发逻辑)
+    * [ ] **Server/Listener** (整体组装)
 * [ ] **Kitex** (RPC 框架)
-    
+  
     * [ ] 服务端启动流程
     * [ ] 客户端调用流程
     * [ ] 编解码 (Codec) 与协议 (Protocol)
