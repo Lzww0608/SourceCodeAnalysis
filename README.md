@@ -39,7 +39,12 @@ CloudWeGo 作为字节跳动开源的高性能、可扩展的微服务框架，�
         * [x] Linux 平台实现（poll_default_linux）
         * [x] 初始化与核心结构（eventfd、FDOperator）
         * [x] 事件循环与控制接口
-    * [ ] **Connection** (如何将 Buffer 和 FD 结合)
+    * [x] **Connection** (Buffer 和 FD 的完美结合)
+        * [x] Connection 接口定义与核心结构
+        * [x] Reader/Writer 实现详解（零拷贝读写）
+        * [x] 与 FDOperator 的深度集成
+        * [x] 事件处理机制（OnConnect/OnRequest/OnDisconnect）
+        * [x] 完整的生命周期管理
     * [ ] **EventLoop** (事件分发逻辑)
     * [ ] **Server/Listener** (整体组装)
 * [ ] **Kitex** (RPC 框架)
