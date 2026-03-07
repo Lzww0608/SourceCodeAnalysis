@@ -52,6 +52,28 @@ result.thenApply((String r) -> {
 Workflow.await(() -> done || signal_received);
 ```
 
+```go
+childFuture := workflow.ExecuteChildWorkflow(ctx, ChildWorkflow, childInput)
+
+done := false
+signalReceived := false
+
+signalCh := workflow.GetSignalChannel(ctx, "signal_received")
+selector := workflow.NewSelector(ctx)
+
+selector.AddFuture(childFuture, func(f workflow.Future) {
+    done = true
+})
+selector.AddReceive(signalCh, func(c workflow.ReceiveChannel, more bool) {
+    c.Receive(ctx, nil)
+    signalReceived = true
+})
+
+for !done && !signalReceived {
+    selector.Select(ctx)
+}
+```
+
 **关键点**：
 - 使用 `Async.function()` 异步启动子工作流
 - 使用 `Promise.thenApply()` 处理完成回调
